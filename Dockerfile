@@ -14,10 +14,13 @@
 
 FROM resin/rpi-raspbian:jessie
 
+# the exit 0 prevents the warning
+# "debconf: delaying package configuration, since apt-utils is not installed"
+# from failing the build
 RUN apt-get update \
-    && apt-get install -y \
-       curl gcc libc6-dev libc6 apt-utils \
-       --no-install-recommends
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+       curl gcc libc6-dev libc6 \
+       --no-install-recommends ; exit 0
 
 ENV GO_VERSION 1.8
 
