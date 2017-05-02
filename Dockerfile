@@ -14,6 +14,11 @@
 
 FROM resin/rpi-raspbian:jessie
 
+RUN apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+       curl gcc libc6-dev libc6 \
+       --no-install-recommends
+
 ENV GO_VERSION 1.8
 
 RUN curl -sSL https://storage.googleapis.com/golang/go$GO_VERSION.linux-armv6l.tar.gz -o /tmp/go.tar.gz && \
