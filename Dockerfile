@@ -12,12 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Dockerfile that runs a App Engine flexible environment Go application.
-FROM resin/rpi-raspbian:wheezy
+FROM resin/rpi-raspbian:jessie
 
 RUN apt-get update \
     && apt-get install -y \
-       curl mercurial gcc libc6-dev libc6 \
+       curl gcc libc6-dev libc6 \
        --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
