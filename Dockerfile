@@ -20,7 +20,8 @@ FROM resin/rpi-raspbian:jessie
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \
        curl gcc libc6-dev libc6 \
-       --no-install-recommends ; exit 0
+       --no-install-recommends \
+    && exit 0
 
 ENV GO_VERSION 1.8
 
