@@ -17,8 +17,7 @@ FROM resin/rpi-raspbian:jessie
 RUN apt-get update \
     && apt-get install -y \
        curl gcc libc6-dev libc6 \
-       --no-install-recommends \
-    && rm -rf /var/lib/apt/lists/*
+       --no-install-recommends
 
 ENV GO_VERSION 1.8
 
