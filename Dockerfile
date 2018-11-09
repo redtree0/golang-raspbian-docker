@@ -19,7 +19,7 @@ RUN apt-get update \
        curl gcc libc6-dev libc6 \
        --no-install-recommends
 
-ENV GO_VERSION 1.8
+ENV GO_VERSION 1.11
 
 RUN curl -sSL https://storage.googleapis.com/golang/go$GO_VERSION.linux-armv6l.tar.gz -o /tmp/go.tar.gz && \
 #    CHECKSUM=53ab94104ee3923e228a2cb2116e5e462ad3ebaeea06ff04463479d7f12d27ca && \
